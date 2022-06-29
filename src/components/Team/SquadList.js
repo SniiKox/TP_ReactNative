@@ -1,6 +1,6 @@
 import { FlatList, Text, View } from 'react-native'
 import SquadListItem from './SquadListItem'
-import styles from './style/DishesStyle'
+import styles from './style/SquadStyle'
 
 const categoriesTrad = {
   G: 'Gardien',

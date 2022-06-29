@@ -1,5 +1,5 @@
 import { ImageBackground, Text, View } from 'react-native'
-import styles from './style/HeaderRestaurantStyle'
+import styles from './style/HeaderTeamStyle'
 
 const BPL_URL = 'https://www.sportzcraazy.com/wp-content/uploads/2022/05/Premier-League-PNG-Image-temp.png'
 
@@ -12,7 +12,7 @@ function HeaderTeam ({ team }) {
         resizeMode='cover'
       >
         <View style={styles.backdrop}>
-          <Text style={styles.title}>{team.team_name}</Text>
+          <Text style={styles.title}>{team[0]?.name}</Text>
         </View>
       </ImageBackground>
     </View>

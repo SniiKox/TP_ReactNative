@@ -15,7 +15,7 @@ const StackNavigator = createNativeStackNavigator()
 
 const AuthStackNavigator = createNativeStackNavigator()
 
-const RestaurantNavigator = () => {
+const TeamNavigator = () => {
   return (
     <StackNavigator.Navigator>
       <StackNavigator.Screen name='TeamsList' component={TeamsScreen} />
@@ -48,7 +48,7 @@ const MainNavigator = () => {
             case ('Home'):
               iconName = focused ? 'home' : 'home-outline'
               break
-            case ('Restaurants'):
+            case ('Teams'):
               iconName = focused ? 'fast-food' : 'fast-food-outline'
               break
             default:
@@ -63,8 +63,8 @@ const MainNavigator = () => {
     >
       <TabNavigator.Screen name='Home' component={HomeScreen} />
       <TabNavigator.Screen
-        name='Restaurants'
-        component={RestaurantNavigator}
+        name='Teams'
+        component={TeamNavigator}
         options={{
           headerShown: false
         }}
@@ -77,13 +77,6 @@ const RootNavigator = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true)
 
   return isLoggedIn ? <MainNavigator /> : <AuthNavigator />
-
-  // =
-  // if (isLoggedIn) {
-  //   return <MainNavigator />
-  // } else {
-  //   return <AuthNavigator />
-  // }
 }
 
 export default RootNavigator

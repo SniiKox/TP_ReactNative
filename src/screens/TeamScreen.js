@@ -6,7 +6,7 @@ import TeamDetails from '../components/Team/TeamDetails'
 import { getTeamById } from '../services/Api'
 
 function TeamScreen ({ route, navigation }) {
-  const [team, setTeam] = useState()
+  const [team, setTeam] = useState([])
   const { id } = route.params
 
   useEffect(() => {
@@ -19,7 +19,7 @@ function TeamScreen ({ route, navigation }) {
     getData()
   })
 
-  if (!team) {
+  if (!team[0]) {
     return (
       <View>
         <Text>Chargement...</Text>
@@ -31,7 +31,7 @@ function TeamScreen ({ route, navigation }) {
     <ScrollView>
       <HeaderTeam team={team} />
       <TeamDetails team={team} />
-      <SquadList squad={team.squad} />
+      <SquadList squad={team[0]?.squad} />
     </ScrollView>
   )
 }

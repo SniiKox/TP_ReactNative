@@ -1,4 +1,4 @@
-import { View, Text, Image } from 'react-native'
+import { View, Image } from 'react-native'
 import LoginForm from '../components/Forms/LoginForm'
 import Images from '../images/Images'
 import { loginUser } from '../services/Api'

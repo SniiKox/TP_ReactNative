@@ -7,7 +7,7 @@ export default StyleSheet.create({
     width: '100%',
     height: 200
   },
-  dishesCard: {
+  playerCard: {
     backgroundColor: 'white',
     marginHorizontal: 10,
     marginVertical: 10,

@@ -1,7 +1,5 @@
-import { Text, useWindowDimensions, View } from 'react-native'
-import styles from './style/DishesStyle'
-
-// const STRAPI_URL = 'https://strapi.myidea.fr'
+import { Text, View } from 'react-native'
+import styles from './style/SquadStyle'
 
 const ItemSeparator = () => {
   return (
@@ -16,23 +14,14 @@ const ItemSeparator = () => {
 }
 
 function SquadListItem ({ player }) {
-  const SCREEN_WIDTH = useWindowDimensions().width
-
   return (
     <View style={{
-      width: SCREEN_WIDTH,
       height: 'auto',
       flexDirection: 'row'
     }}
     >
       <ItemSeparator />
-      <View style={styles.dishesCard}>
-        {/* {player.photos[0] &&
-          <Image
-            style={styles.image}
-            source={{ uri: `${STRAPI_URL}${plat.photos[0]?.url}` }}
-            resizeMode='cover'
-          />} */}
+      <View style={styles.playerCard}>
         <View style={styles.cardFooter}>
           <Text style={styles.cardTitle}>
             {player.name}

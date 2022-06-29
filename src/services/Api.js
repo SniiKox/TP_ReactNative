@@ -21,7 +21,7 @@ const getTeams = async () => {
 
 const getTeamById = async (id) => {
   try {
-    const response = await api.get('https://data.football-api.com/v3/teams/9002?Authorization=tQLMUvWYih7JvkIhgA3T38HsXH5qi33B4niDAsgc')
+    const response = await api.get(`https://data.football-api.com/v3/teams/${id}?Authorization=tQLMUvWYih7JvkIhgA3T38HsXH5qi33B4niDAsgc`)
     return response.data
   } catch (error) {
     console.error(error)
