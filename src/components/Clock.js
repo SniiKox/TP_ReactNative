@@ -1,6 +1,7 @@
 import { Component } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome5'
+import colors from '../style/Colors'
 
 class Clock extends Component {
   constructor (props) {
@@ -23,8 +24,9 @@ class Clock extends Component {
   render () {
     return (
       <View style={styles.container}>
-        <Icon name='clock' size={25} color='orange' />
-        <Text style={styles.text}>TPZOU : Il est : {this.state.date.toLocaleTimeString()}</Text>
+        <Icon name='clock' size={25} color={colors.primary} />
+        <Text style={styles.text}> Il est : {this.state.date.toLocaleTimeString()} </Text>
+        <Icon name='clock' size={25} color={colors.primary} />
       </View>
     )
   }

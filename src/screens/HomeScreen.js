@@ -2,6 +2,7 @@ import { ScrollView, useColorScheme, View } from 'react-native'
 import { Colors, Header } from 'react-native/Libraries/NewAppScreen'
 import Clock from '../components/Clock'
 import Counter from '../components/Counter'
+import Informations from '../components/Informations'
 
 function HomeScreen () {
   const isDarkMode = useColorScheme() === 'dark'
@@ -22,6 +23,7 @@ function HomeScreen () {
         }}
       >
         <Clock />
+        <Informations />
         <Counter />
         {/* <Favorites /> */}
       </View>

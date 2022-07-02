@@ -11,7 +11,6 @@ function TeamScreen ({ route, navigation }) {
 
   useEffect(() => {
     const getData = async () => {
-      console.log(id)
       const data = await getTeamById(id)
       setTeam(data)
       navigation.setOptions({ title: data.title })

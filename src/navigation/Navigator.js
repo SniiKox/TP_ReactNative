@@ -1,19 +1,15 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import Icon from 'react-native-vector-icons/Ionicons'
+import Icon from 'react-native-vector-icons/AntDesign'
 
 import HomeScreen from '../screens/HomeScreen'
 import TeamsScreen from '../screens/TeamsScreen'
 import colors from '../style/Colors'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import TeamScreen from '../screens/TeamScreen'
-import LoginScreen from '../screens/LoginScreen'
-import { useState } from 'react'
 
 const TabNavigator = createBottomTabNavigator()
 
 const StackNavigator = createNativeStackNavigator()
-
-const AuthStackNavigator = createNativeStackNavigator()
 
 const TeamNavigator = () => {
   return (
@@ -21,18 +17,6 @@ const TeamNavigator = () => {
       <StackNavigator.Screen name='TeamsList' component={TeamsScreen} />
       <StackNavigator.Screen name='TeamDetails' component={TeamScreen} />
     </StackNavigator.Navigator>
-  )
-}
-
-const AuthNavigator = () => {
-  return (
-    <AuthStackNavigator.Navigator
-      screenOptions={{
-        headerShown: false
-      }}
-    >
-      <AuthStackNavigator.Screen name='Login' component={LoginScreen} />
-    </AuthStackNavigator.Navigator>
   )
 }
 
@@ -46,10 +30,10 @@ const MainNavigator = () => {
 
           switch (route.name) {
             case ('Home'):
-              iconName = focused ? 'home' : 'home-outline'
+              iconName = 'home'
               break
             case ('Teams'):
-              iconName = focused ? 'fast-food' : 'fast-food-outline'
+              iconName = 'team'
               break
             default:
               break
@@ -73,10 +57,4 @@ const MainNavigator = () => {
   )
 }
 
-const RootNavigator = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(true)
-
-  return isLoggedIn ? <MainNavigator /> : <AuthNavigator />
-}
-
-export default RootNavigator
+export default MainNavigator
