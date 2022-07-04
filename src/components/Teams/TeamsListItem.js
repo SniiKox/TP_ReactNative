@@ -12,7 +12,6 @@ function TeamsListItem ({ team }) {
   const { dispatch } = useFavorites()
 
   const addTeam = (teamToAdd) => {
-    console.log(teamToAdd)
     dispatch({
       type: actionTypes.ADD,
       name: teamToAdd

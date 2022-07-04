@@ -29,7 +29,7 @@ function SquadList ({ squad }) {
               pagingEnabled
               legacyImplementation={false}
               data={squad.filter(d => d.position === c)}
-              keyExtractor={player => player._id}
+              keyExtractor={player => player.id}
               renderItem={renderItem}
             />
           </View>
