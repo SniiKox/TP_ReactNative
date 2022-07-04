@@ -1,11 +1,13 @@
 import { Button, Text, View } from 'react-native'
-import { actionTypes, FavoritesProvider, useFavorites } from '../contexts/FavoritesContext'
+import { actionTypes, useFavorites } from '../contexts/FavoritesContext'
 
 const FavoritesValue = () => {
-  const { state: { favorites } } = useFavorites()
+  const { state: { favoritesTeams } } = useFavorites()
+
   return (
     <View>
-      <Text> Equipe favorites : {favorites}</Text>
+      <Text>Mes équipes favorites :</Text>
+      <Text>{favoritesTeams.map((team) => team + ' - ')}</Text>
     </View>
   )
 }
@@ -13,14 +15,14 @@ const FavoritesValue = () => {
 const FavoritesActions = () => {
   const { dispatch } = useFavorites()
 
-  const handlePlus = (team) => {
+  const addTeam = (team) => {
     dispatch({
       type: actionTypes.ADD,
       name: team
     })
   }
 
-  const handleMinus = (team) => {
+  const deleteTeam = (team) => {
     dispatch({
       type: actionTypes.DELETE,
       name: team
@@ -29,20 +31,17 @@ const FavoritesActions = () => {
 
   return (
     <View>
-      <Button title='-' onPress={handleMinus('A')} />
-      <Button title='+' onPress={handlePlus('B')} />
+      <Button title='+' onPress={() => addTeam('EquipeTest')} />
+      <Button title='-' onPress={() => deleteTeam('EquipeTest')} />
     </View>
   )
 }
 
 const Favorites = () => {
   return (
-    <FavoritesProvider>
-      <View>
-        <FavoritesValue />
-        <FavoritesActions />
-      </View>
-    </FavoritesProvider>
+    <View>
+      <FavoritesValue />
+    </View>
   )
 }
 

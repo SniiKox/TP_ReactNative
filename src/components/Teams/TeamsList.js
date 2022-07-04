@@ -10,7 +10,7 @@ function TeamsList ({ teams }) {
     <FlatList
       data={teams}
       renderItem={renderItem}
-      keyExtractor={item => item._id}
+      keyExtractor={item => item.team_id}
     />
   )
 }

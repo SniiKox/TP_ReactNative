@@ -23,12 +23,18 @@ const initialState = {
 const favoritesReducer = (state, action) => {
   switch (action.type) {
     case actionTypes.ADD:
-      return {
-        favoritesTeams: state.favoritesTeams.push(action.name)
+      if (!state.favoritesTeams.includes(action.name)) {
+        return {
+          favoritesTeams: state.favoritesTeams.concat([action.name])
+        }
+      } else {
+        return {
+          favoritesTeams: state.favoritesTeams
+        }
       }
     case actionTypes.DELETE:
       return {
-        favoritesTeams: []// state.favoritesTeams.filter(e => e !== action.name)
+        favoritesTeams: state.favoritesTeams.filter(e => e !== action.name)
       }
     default:
       throw new Error(`Unhandled action type ${action.type}`)

@@ -1,7 +1,7 @@
 import { ScrollView, useColorScheme, View } from 'react-native'
 import { Colors, Header } from 'react-native/Libraries/NewAppScreen'
 import Clock from '../components/Clock'
-import Counter from '../components/Counter'
+import Favorites from '../components/Favorites'
 import Informations from '../components/Informations'
 
 function HomeScreen () {
@@ -24,8 +24,8 @@ function HomeScreen () {
       >
         <Clock />
         <Informations />
-        <Counter />
-        {/* <Favorites /> */}
+        {/* <Counter /> */}
+        <Favorites />
       </View>
     </ScrollView>
   )

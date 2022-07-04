@@ -16,6 +16,7 @@ import {
 import {
   Colors
 } from 'react-native/Libraries/NewAppScreen'
+import { FavoritesProvider } from './contexts/FavoritesContext'
 import MainNavigator from './navigation/Navigator'
 
 const App = () => {
@@ -27,10 +28,12 @@ const App = () => {
 
   return (
     <NavigationContainer>
-      <SafeAreaView style={[{ height: '100%' }, backgroundStyle]}>
-        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-        <MainNavigator />
-      </SafeAreaView>
+      <FavoritesProvider>
+        <SafeAreaView style={[{ height: '100%' }, backgroundStyle]}>
+          <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+          <MainNavigator />
+        </SafeAreaView>
+      </FavoritesProvider>
     </NavigationContainer>
   )
 }
