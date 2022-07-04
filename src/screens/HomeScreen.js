@@ -24,7 +24,6 @@ function HomeScreen () {
       >
         <Clock />
         <Informations />
-        {/* <Counter /> */}
         <Favorites />
       </View>
     </ScrollView>
